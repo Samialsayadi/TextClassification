@@ -1,0 +1,2 @@
+# TextClassification
+Fuzzy classification
