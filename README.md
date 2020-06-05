@@ -1,4 +1,4 @@
-# A Fuzzy Declarative Approach to Classify Unlabeled short texts based on Automatically 
+#  Classify Unlabeled short texts 
 
  In order to reproduce the experiments, follow these steps:
 
@@ -112,6 +112,7 @@
   Recall (w.r.t. the set of categories):    76.52173913043478
   
   F measure:                                      :  65.67164179104478
+  
  .............................................................................
  true .
 
