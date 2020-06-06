@@ -6,15 +6,7 @@ Created on Fri Mar  6 15:43:54 2020
 @author: samialsayadi
 """
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar  6 12:25:09 2020
-
-@author: samialsayadi
-"""
-
-#from pattern.en import wordnet  
+from pattern.en import wordnet
 from nltk.tokenize import word_tokenize
 from pattern.text.en import singularize
 from pattern.en import tenses, PAST, PL
@@ -22,13 +14,10 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import wordnet as wn  
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
-
-
-
 from sematch.semantic.similarity import WordNetSimilarity
 wns = WordNetSimilarity()
 
-#stop_words = set(stopwords.words('english'))
+stop_words = set(stopwords.words('english'))
 Lem = WordNetLemmatizer()
 
 def getEnglishStopWords():
@@ -39,7 +28,6 @@ def getEnglishStopWords():
         such as "please", "sincerely", "u", etc...
         '''
         stop_words = set(stopwords.words("english"))
-        
         stop_words.add('please')
         for item in 'abcdefghijklmnopqrstuvwxyz':
             stop_words.add(item)
@@ -53,12 +41,6 @@ list1=['acq', 'corn', 'crude', 'earn','grain', 'interest', 'money', 'ship','trad
 #list1=['policy', 'transportation', 'agriculture', 'health', 'climate_change', 'air', 'atmosphere', 'water']
 
 
-#list1=['associations', 'consulting', 'electricity', 'employment','fuel_cells', 'hydrogen', 'management', 'oil_gas', 'renewable', 'utilities']
-#list1=['policy']
-#list1=['acquisition', 'corn', 'atmosphere', 'climate_change', 'health', 'policy', 'transportation', 'water']
-#list1=['cat']
-#list1=['policy', 'transportation', 'agriculture', 'health', 'climate_change', 'air', 'atmosphere', 'water']
-#list1=['cat']
 def wn_lemm(tokens):
     tokenize=[]
     tokens = [line.rstrip('\n') for line in tokens]
@@ -102,11 +84,11 @@ def Removedub(list2):
     return final_list
 
 def main():
-    for i in range(len(list1)):
-        for label in [list1[i]]:
-            for g in   wn.synsets(label):
+    for Terms in range(len(list1)):
+        for label in [list1[Terms]]:
+            for def_labels in   wn.synsets(label):
                 #get all gloss definiation
-                deftoken=g.definition()
+                deftoken=def_labels.definition()
 #                print(deftoken)
                 #get all tokenize
                 tkn=word_tokenize(deftoken)  
@@ -127,10 +109,10 @@ def main():
                         wordFromList1 = wn.synsets(label)
                         wordFromList2 = wn.synsets(token)
                         if wordFromList1 and wordFromList2: 
-                            s = wordFromList1[0].path_similarity(wordFromList2[0])
-                            if s != None and s > 0.001:
+                            degree = wordFromList1[0].path_similarity(wordFromList2[0])
+                            if degree != None and degree > 0.001:
                                 #save all ontologies in a txt file 
-                                print(label,'~',token,'=',s,'.', file=data)
+                                print(label,'~',token,'=',degree,'.', file=data)
                                 
 main()
 
