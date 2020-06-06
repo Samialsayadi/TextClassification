@@ -6,23 +6,7 @@ Created on Sun Mar 15 22:19:37 2020
 @author: samialsayadi
 """
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar  6 15:43:54 2020
-
-@author: samialsayadi
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar  6 12:25:09 2020
-
-@author: samialsayadi
-"""
-
-#from pattern.en import wordnet  
+from pattern.en import wordnet
 from nltk.tokenize import word_tokenize
 from pattern.text.en import singularize
 from pattern.en import tenses, PAST, PL
@@ -41,7 +25,6 @@ list1=['acq', 'corn', 'crude', 'earn','grain', 'interest', 'money', 'ship','trad
 #list1=['policy', 'transportation', 'agriculture', 'health', 'climate_change', 'air', 'atmosphere', 'water']
 
 
-#print(wn_lemm(classes))
 def glossdef(token):
     tokens=[]
     for term in token:
@@ -69,16 +52,14 @@ def hy(token):
 def main():
     for i in range(len(list1)):
         for label in [list1[i]]:
-            for token in  wn.synsets(label):
-                tkn=list(set([w for s in token.closure(lambda s:s.hyponyms()) for w in s.lemma_names()]))
-#                deftoken=token.closure(lambda s:s.hyponyms())
-#                tkn=word_tokenize(deftoken)  
-                for w in tkn:
+            for def_label in  wn.synsets(label):
+                tkn=list(set([w for s in def_label.closure(lambda s:s.hyponyms()) for w in s.lemma_names()]))
+                for keywords in tkn:
                         # remove stop words
-                    if w not in stop_words and len(w)>1:
+                    if keywords not in stop_words and len(keywords)>1:
                 #b.	Convert all plural nouns form (irregular and regular) to singular noun form
                 #using pattern library in python.
-                        token=singularize(w)
+                        token=singularize(keywords)
                         token = ''.join(i for i in token if not i.isdigit())
                         token=token.lower()
                         token=WordNetLemmatizer().lemmatize(token,'v')
@@ -89,10 +70,10 @@ def main():
                         wordFromList1 = wn.synsets(label)
                         wordFromList2 = wn.synsets(token)
                         if wordFromList1 and wordFromList2: 
-                            s = wordFromList1[0].path_similarity(wordFromList2[0])
-                            if s != None and s > 0.01:
+                            degree = wordFromList1[0].path_similarity(wordFromList2[0])
+                            if degree != None and degree > 0.01:
                                 #save all ontologies in a txt file 
-                                print(label,'~',token,'=',s,'.', file=data)
+                                print(label,'~',token,'=',degree,'.', file=data)
                                 
 main()
 
