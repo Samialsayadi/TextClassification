@@ -1,19 +1,21 @@
 #  Classify Unlabeled short texts 
 
- In order to reproduce the experiments, follow these steps:
+In order to reproduce the experiments, follow these steps:
+<ol>
+ <li>1) Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
 
- 1) Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
+<li> 2) Execute the Bousi~Prolog system:
+    you can download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/) 
+<ol>
+<li> >> bousi
+<li> >> cd Downloads/A Fuzzy to Classify based ontologies
+<li> >> ld cataloging 
+</ol>
+ <li>3) Load the cataloging.bpl program and an ontology. 
 
- 2) Execute the Bousi~Prolog system:
-
- >> bousi
- >> cd Downloads/A Fuzzy to Classify based ontologies
- >> ld cataloging 
- 3) Load the cataloging.bpl program and an ontology. 
-
- BPL> ld cataloging.bpl
- BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
-
+ <li>BPL> ld cataloging.bpl
+<li> BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
+</ol>
  4) Perform an experiment, launching the goal: experiment(Measure, FileName, CategoryList, Process).
  The "Measure" parameter can be one of the following constants: [ont, path, wup, lch, res, jcn, jin, yarm]. The constant "ont" means that you want to perform the experimentes using a predefined ontology, that you must first load before launching the predicate "experiment/4". The other constants are the acronyms of standard linguistic similarity measures which are computed thanks to the connection to the Prolog version of the WordNet database. This connection is automatically established by the cataloging.bpl program (and it does not require uploading an ontology). 
 
