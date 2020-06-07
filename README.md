@@ -1,5 +1,74 @@
-#  Classify Unlabeled short texts 
+#  Classify Unlabeled short texts
 
+This library classifies short texts, Using Wordnet Ontologies and Fuzzy Declarative modeling. It is geared towards creating Semantic Classification of corpora of relatively short documents, such as comments on social media, or online product reviews. The WordNet-Gloss and Hyponyms use to create the ontologies, then apply Fuzzy Declarative to classify short Docs.
+
+The library consists of two main scripts to generate ontologies: `aut_ontology_based_gloss.py`  and `auto_ontology_based_hy.py`. 
+
+In both scripts we used the same Pre-Processing steps:
+
+* Tokenization using the NLTK Liberary
+```python
+from nltk.tokenize import word_tokenize
+tokens=word_tokenize(token)
+
+```
+* removal of stopwords using an augmented version of the NLTK English stopwords corpus, [here](http://www.nltk.org/nltk_data/)
+```python
+from nltk.corpus import stopwords
+stop_words = set(stopwords.words('english'))
+
+```
+* convert noun forms from Plurs into Singular-nouns using pattern liberary, [here](https://github.com/clips/pattern) .
+```python
+from pattern.text.en import singularize
+
+        if w not in stop_words and len(w)>1:
+                    #b.    Convert all plural nouns form (irregular and regular) to singular noun form
+                    #using pattern library in python.
+            token=singularize(w)
+
+```
+* Lemmatization using the NLTK WordNetLemmatizer, [here](http://www.nltk.org/api/nltk.stem.html#module-nltk.stem.wordnet) 
+```python
+from nltk.stem.wordnet import WordNetLemmatizer
+Lem = WordNetLemmatizer()
+# verb: pos='a' 
+token=WordNetLemmatizer().lemmatize(token,'v')
+# # adjective: pos='a' 
+token=WordNetLemmatizer().lemmatize(token,'a')
+#  adverb: pos='r' 
+token=WordNetLemmatizer().lemmatize(token,'r')
+```
+Generate Ontologies based wordnet definition(gloss):
+```python
+from nltk.corpus import wordnet as wn  
+for label in [list1[Terms]]:
+for def_labels in   wn.synsets(label):
+    #get all gloss definiation
+    deftoken=def_labels.definition()
+```
+Generate Ontologies based wordnet  hyponyms:
+```python
+from nltk.corpus import wordnet as wn  
+
+for def_label in  wn.synsets(label):
+tkn=list(set([w for s in def_label.closure(lambda s:s.hyponyms()) for w in s.lemma_names()]))
+```
+to get the similarity degree between keywords and their definition or hyponyms
+```python
+from nltk.corpus import wordnet as wn  
+
+wordFromList1 = wn.synsets(label)
+wordFromList2 = wn.synsets(token)
+if wordFromList1 and wordFromList2: 
+    degree = wordFromList1[0].path_similarity(wordFromList2[0])
+    if degree != None and degree > 0.01:
+        #save all ontologies in a txt file 
+        print(label,'~',token,'=',degree,'.', file=data)
+```
+
+
+# Classification Method by using Bousi~Prolog system
 > Perform an experiment, launching the goal: experiment(Measure, FileName, CategoryList, Process).
 >The "Measure" parameter can be one of the following constants: [ont, path, wup, lch, res, jcn, jin, yarm]. 
 >The constant "ont" means that you want to perform the experimentes using a predefined ontology, that you must first load before launching the predicate "experiment/4". 
@@ -65,7 +134,8 @@ BPL> cd Downloads/A Fuzzy to Classify based ontologies
  'cataloging-wikipedia.tpl' is being loaded...
  Ontology loaded!
 ```
-<li> reproduce the experiments
+<li>Reproduce the experiments.
+
    ```
  BPL> experiment(ont, 'finalexperiments/odp/odp',[renewable, electricity, oil_gas, utilities, fuel_cells, hydrogen, consulting, employment, associations, management], sUm)
    ```
@@ -124,4 +194,6 @@ BPL> cd Downloads/A Fuzzy to Classify based ontologies
 # Dependencies
 
 * [Bousi~Prolog :](https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads) `bpl-3.5-highsierra-executable` (BPL version 3.5 )
+* [NLTK:](https://anaconda.org/anaconda/nltk) `conda install nltk` 
+* [Pattern :](https://anaconda.org/asmeurer/pattern) `conda install pattern ` 
 
