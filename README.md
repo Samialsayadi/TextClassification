@@ -34,34 +34,30 @@
  Process: A compatibility degree operator (e.g.: sUm, wa, mIn, mAx)
 
 
+ # Execute the Bousi~Prolog system to reproduce the experiments, follow these steps: 
 
- .................... A SIMPLE SESION (REMEMBER: using the "ont" mode first requires loading an ontology) ..........................
-
- Last login: Thu Mar 12 01:04:01 on ttys003
- macbook-pro-de-pascual-julian-iranzo:~ pjulian$ cd /Users/pjulian/Trabajo/Investigacion/Papers/CAEPIA-2020/Program-DEVEL
- macbook-pro-de-pascual-julian-iranzo:Program-DEVEL pjulian$ bousi
-
-                                                     Universidad de
- |O)               |D)                            Castilla - La Mancha
- |O)(O)\U(S)|I| ~~ || |R (O) |L (O) (G|.    (Version Devel ~ January, 22nd 2020)
- -----------------------------------------------------------------------------
-     Welcome to Bousi~Prolog, a fuzzy logic programming system created by
-     Juan Gallardo-Casero and Pascual Julian-Iranzo. Fernando Saenz-Perez
-     (UCM) contributed to this version. This software is for research and
-     educational purposes only, and it is distributed with NO WARRANTY.
-     Please visit our website for the latest news on Bousi~Prolog:
-                 https://dectau.uclm.es/bousi-prolog
- -----------------------------------------------------------------------------
-
- -----------------------------------------------------------------------------
- 
- --            Execute the Bousi~Prolog system to reproduce the experiments, follow these steps:             --
- -----------------------------------------------------------------------------
- after install the Bousi~Prolog system, you can lunch the program: [Bousi~Prolog ON-LINE MANUAL
+after install the Bousi~Prolog system, you can lunch the program: [Bousi~Prolog ON-LINE MANUAL
  :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
 ```
 >> bousi
 ```
+
+
+                                                    Universidad de
+|O)               |D)                            Castilla - La Mancha
+|O)(O)\U(S)|I| ~~ || |R (O) |L (O) (G|.    (Version Devel ~ January, 22nd 2020)
+-----------------------------------------------------------------------------
+    Welcome to Bousi~Prolog, a fuzzy logic programming system created by
+    Juan Gallardo-Casero and Pascual Julian-Iranzo. Fernando Saenz-Perez
+    (UCM) contributed to this version. This software is for research and
+    educational purposes only, and it is distributed with NO WARRANTY.
+    Please visit our website for the latest news on Bousi~Prolog:
+                https://dectau.uclm.es/bousi-prolog
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+
+
 Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
 ```
 BPL> cd Downloads/A Fuzzy to Classify based ontologies
