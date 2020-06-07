@@ -1,4 +1,4 @@
-#  Classify Unlabeled short texts
+#  Classify Unlabeled Short Texts
 
 This library classifies short texts, Using Wordnet Ontologies and Fuzzy Declarative modeling. It is geared towards creating Semantic Classification of corpora of relatively short documents, such as comments on social media, or online product reviews. The WordNet-Gloss and Hyponyms use to create the ontologies, then apply Fuzzy Declarative to classify short Docs.
 
@@ -81,11 +81,11 @@ if wordFromList1 and wordFromList2:
 >Process: A compatibility degree operator (e.g.: sUm, wa, mIn, mAx).
 
 # In order to install the Bousi~Prolog system, follow these steps:
-<ol>
-<li>Download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads).
- <li> Follow the instructions, which found in [Bousi~Prolog ON-LINE MANUAL
- :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
-</ol>
+
+Download Bousi~Prolog system: [here](https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads).
+Follow the instructions, which found in [Bousi~Prolog ON-LINE MANUAL
+:](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
+
  
 
  # Execute the Bousi~Prolog system to reproduce the experiments, follow these steps: 
