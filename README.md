@@ -6,7 +6,7 @@
 >The other constants are the acronyms of standard linguistic similarity measures which are computed thanks to the connection to the Prolog version of the WordNet database. 
 >This connection is automatically established by the cataloging.bpl program (and it does not require uploading an ontology). 
 
-In order to reproduce the experiments, follow these steps:
+# In order to install the Bousi~Prolog system, follow these steps:
 <ol>
  <li>1) Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
 
@@ -54,8 +54,18 @@ In order to reproduce the experiments, follow these steps:
  -----------------------------------------------------------------------------
 
  -----------------------------------------------------------------------------
- --            Enter 'hp' to get help on the available commands             --
+ 
+ --            Execute the Bousi~Prolog system to reproduce the experiments, follow these steps:             --
  -----------------------------------------------------------------------------
+ after install the Bousi~Prolog system, you can lunch the program: [Bousi~Prolog ON-LINE MANUAL
+ :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
+```
+>> bousi
+```
+Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
+```
+BPL> cd Downloads/A Fuzzy to Classify based ontologies
+```
 
  Load the cataloging.bpl program and an ontology. 
  
@@ -130,6 +140,5 @@ Load an ontology.
 ```
 # Dependencies
 
-* [Bousi~Prolog :](https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads/) `bpl-3.5-highsierra-executable` (BPL version 3.5 )
+* [Bousi~Prolog :](https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads) `bpl-3.5-highsierra-executable` (BPL version 3.5 )
 
- BPL> 
