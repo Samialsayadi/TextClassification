@@ -12,13 +12,13 @@ from nltk.tokenize import word_tokenize
 tokens=word_tokenize(token)
 
 ```
-* removal of stopwords using an augmented version of the NLTK English stopwords corpus, [here](http://www.nltk.org/nltk_data/)
+* Removal of stopwords using an augmented version of the NLTK English stopwords corpus, [here](http://www.nltk.org/nltk_data/)
 ```python
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 
 ```
-* convert noun forms from Plurs into Singular-nouns using pattern liberary, [here](https://github.com/clips/pattern) .
+* Convert all plural noun forms (irregular and regular) into singular noun forms using pattern library, [here](https://github.com/clips/pattern) .
 ```python
 from pattern.text.en import singularize
 
@@ -54,7 +54,7 @@ from nltk.corpus import wordnet as wn
 for def_label in  wn.synsets(label):
 tkn=list(set([w for s in def_label.closure(lambda s:s.hyponyms()) for w in s.lemma_names()]))
 ```
-to get the similarity degree between keywords and their definition or hyponyms
+You can get the similarity degree between keywords and their definition or hyponyms by the follow code:
 ```python
 from nltk.corpus import wordnet as wn  
 
