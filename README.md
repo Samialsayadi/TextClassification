@@ -4,7 +4,7 @@ This library classifies short texts, Using Wordnet Ontologies and Fuzzy Declarat
 
 The library consists of two main scripts to generate ontologies: `aut_ontology_based_gloss.py`  and `auto_ontology_based_hy.py`. 
 
-In both scripts we used the same Pre-Processing steps:
+In both scripts used the same Pre-Processing steps:
 
 * Tokenization using the NLTK Liberary
 ```python
