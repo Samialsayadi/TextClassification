@@ -13,16 +13,16 @@
 
 # In order to install the Bousi~Prolog system, follow these steps:
 <ol>
- <li>Download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/) 
- <li> follow the instructions in [Bousi~Prolog ON-LINE MANUAL
+<li>Download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads).
+ <li> Follow the instructions, which found in [Bousi~Prolog ON-LINE MANUAL
  :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
 </ol>
  
 
  # Execute the Bousi~Prolog system to reproduce the experiments, follow these steps: 
 <ol>
-<li> After install follow the instructions in [Bousi~Prolog ON-LINE MANUAL
-:](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) the Bousi~Prolog system, you can lunch the program: 
+<li> After install, please follow the instructions that found in [Bousi~Prolog ON-LINE MANUAL :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) to lunch the Bousi~Prolog system.
+
 ```
 >> bousi
 ```
