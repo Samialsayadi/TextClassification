@@ -6,38 +6,23 @@
 >The other constants are the acronyms of standard linguistic similarity measures which are computed thanks to the connection to the Prolog version of the WordNet database. 
 >This connection is automatically established by the cataloging.bpl program (and it does not require uploading an ontology). 
 
+>EXPLANATION:
+>FileName: File name or path name of a file containing the documents to be classified (stored in the the SMART standard format).
+>CategoryList: A list of categories related with the ontology loaded. 
+>Process: A compatibility degree operator (e.g.: sUm, wa, mIn, mAx).
+
 # In order to install the Bousi~Prolog system, follow these steps:
 <ol>
- <li>1) Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
-
-<li> 2) Execute the Bousi~Prolog system:
-    you can download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/) 
+ <li>Download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/) 
+ <li> follow the instructions in [Bousi~Prolog ON-LINE MANUAL
+ :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
 <ol>
-<li> >> bousi
-<li> >> cd Downloads/A Fuzzy to Classify based ontologies
-<li> >> ld cataloging 
-</ol>
- <li>3) Load the cataloging.bpl program and an ontology. 
-
- <li>BPL> ld cataloging.bpl
-<li> BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
-</ol>
  
- cd Downloads/Bousiex/
- Ld cataloging.bpl 
-
- BPL> experiment(ont, 'finalexperiments/odp/odp',[renewable, electricity, oil_gas, utilities, fuel_cells, hydrogen, consulting, employment, associations, management], sUm)
-
- EXPLANATION:
- FileName: File name or path name of a file containing the documents to be classified (stored in the the SMART standard format).
- CategoryList: A list of categories related with the ontology loaded. 
- Process: A compatibility degree operator (e.g.: sUm, wa, mIn, mAx)
-
 
  # Execute the Bousi~Prolog system to reproduce the experiments, follow these steps: 
-
-after install the Bousi~Prolog system, you can lunch the program: [Bousi~Prolog ON-LINE MANUAL
- :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
+<ol>
+<li> After install follow the instructions in [Bousi~Prolog ON-LINE MANUAL
+:](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) the Bousi~Prolog system, you can lunch the program: 
 ```
 >> bousi
 ```
@@ -58,12 +43,13 @@ after install the Bousi~Prolog system, you can lunch the program: [Bousi~Prolog 
 -----------------------------------------------------------------------------
 
 
-Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
+<li>Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
+
 ```
 BPL> cd Downloads/A Fuzzy to Classify based ontologies
 ```
 
- Load the cataloging.bpl program and an ontology. 
+<li> Load the cataloging.bpl program and an ontology. 
  
   ```
   BPL> ld cataloging
@@ -71,7 +57,7 @@ BPL> cd Downloads/A Fuzzy to Classify based ontologies
  'cataloging.tpl' is being loaded...
  Program loaded!
   ```
-Load an ontology. 
+<li>Load an ontology. 
 
   ```
  BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
@@ -79,10 +65,11 @@ Load an ontology.
  'cataloging-wikipedia.tpl' is being loaded...
  Ontology loaded!
 ```
- reproduce the experiments
+<li> reproduce the experiments
    ```
  BPL> experiment(ont, 'finalexperiments/odp/odp',[renewable, electricity, oil_gas, utilities, fuel_cells, hydrogen, consulting, employment, associations, management], sUm)
    ```
+  </ol> 
    The results:
    
  ```
