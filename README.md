@@ -16,7 +16,7 @@
  <li>Download Bousi~Prolog system: [here] (https://dectau.uclm.es/bousi-prolog/) 
  <li> follow the instructions in [Bousi~Prolog ON-LINE MANUAL
  :](https://dectau.uclm.es/bousi-prolog/2019/02/26/on-line-manual) 
-<ol>
+</ol>
  
 
  # Execute the Bousi~Prolog system to reproduce the experiments, follow these steps: 
