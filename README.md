@@ -1,5 +1,11 @@
 #  Classify Unlabeled short texts 
 
+> Perform an experiment, launching the goal: experiment(Measure, FileName, CategoryList, Process).
+>The "Measure" parameter can be one of the following constants: [ont, path, wup, lch, res, jcn, jin, yarm]. 
+>The constant "ont" means that you want to perform the experimentes using a predefined ontology, that you must first load before launching the predicate "experiment/4". 
+>The other constants are the acronyms of standard linguistic similarity measures which are computed thanks to the connection to the Prolog version of the WordNet database. 
+>This connection is automatically established by the cataloging.bpl program (and it does not require uploading an ontology). 
+
 In order to reproduce the experiments, follow these steps:
 <ol>
  <li>1) Go to the working directory: the one where is placed the cataloging.bpl program and a directory 'finalexperiments' containing the document collections and ontologies.
@@ -16,9 +22,7 @@ In order to reproduce the experiments, follow these steps:
  <li>BPL> ld cataloging.bpl
 <li> BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
 </ol>
- 4) Perform an experiment, launching the goal: experiment(Measure, FileName, CategoryList, Process).
- The "Measure" parameter can be one of the following constants: [ont, path, wup, lch, res, jcn, jin, yarm]. The constant "ont" means that you want to perform the experimentes using a predefined ontology, that you must first load before launching the predicate "experiment/4". The other constants are the acronyms of standard linguistic similarity measures which are computed thanks to the connection to the Prolog version of the WordNet database. This connection is automatically established by the cataloging.bpl program (and it does not require uploading an ontology). 
-
+ 
  cd Downloads/Bousiex/
  Ld cataloging.bpl 
 
@@ -53,24 +57,28 @@ In order to reproduce the experiments, follow these steps:
  --            Enter 'hp' to get help on the available commands             --
  -----------------------------------------------------------------------------
 
-
- BPL> ld cataloging
+ Load the cataloging.bpl program and an ontology. 
+ 
+  ```
+  BPL> ld cataloging
  Parsing and translating 'cataloging.bpl'...
  'cataloging.tpl' is being loaded...
  Program loaded!
+  ```
+Load an ontology. 
 
+  ```
  BPL> ld -o 'finalexperiments/odp/wikipedia.ont'
  Parsing and translating 'cataloging.bpl' using ontology 'wikipedia.ont'...
  'cataloging-wikipedia.tpl' is being loaded...
  Ontology loaded!
-
- BPL> ld
- Current loaded program is:
- /Users/pjulian/Trabajo/Investigacion/Papers/CAEPIA-2020/Program-DEVEL/cataloging.bpl
- Current loaded ontology is:
- /Users/pjulian/Trabajo/Investigacion/Papers/CAEPIA-2020/Program-DEVEL/finalexperiments/odp/wikipedia.ont
-
+```
+ reproduce the experiments
+   ```
  BPL> experiment(ont, 'finalexperiments/odp/odp',[renewable, electricity, oil_gas, utilities, fuel_cells, hydrogen, consulting, employment, associations, management], sUm)
+   ```
+   The results:
+   
  ```
  Processing file, finalexperiments/odp/odp, for category: renewable.  This may take a while ...
  End of file reached.
@@ -120,4 +128,8 @@ In order to reproduce the experiments, follow these steps:
  true .
 
 ```
+# Dependencies
+
+* [Bousi~Prolog :](https://dectau.uclm.es/bousi-prolog/2018/07/26/downloads/) `bpl-3.5-highsierra-executable` (BPL version 3.5 )
+
  BPL> 
