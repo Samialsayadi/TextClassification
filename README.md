@@ -1,4 +1,4 @@
-#  Classify Unlabeled Short Texts
+#  A Fuzzy Declarative Approach to Classify Unlabeled Short Texts Based on Automatically Constructed WordNet Ontologies [here](https://link.springer.com/chapter/10.1007/978-3-030-74970-5_18).
 
 This library classifies short texts, Using Wordnet Ontologies and Fuzzy Declarative modeling. It is geared towards creating Semantic Classification of corpora of relatively short documents, such as comments on social media, or online product reviews. The WordNet-Gloss and Hyponyms use to create the ontologies, then apply Fuzzy Declarative to classify short Docs.
 
